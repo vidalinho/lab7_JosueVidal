@@ -11,16 +11,18 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author josue
  */
-public class adminUsuarios {
+public class adminUsuarios implements Serializable {
 
     private ArrayList<Usuario> listaUsuarios = new ArrayList();
     private File archivo = null;
+    private static final long SerialVersionUID = 555L;
 
     public adminUsuarios(String path) {
         archivo = new File(path);

@@ -5,15 +5,18 @@
  */
 package lab7_josuevidal;
 
+import java.io.Serializable;
+
 /**
  *
  * @author josue
  */
-public class Cita {
+public class Cita implements Serializable {
 
     private String fecha;
     private Usuario usuario;
     private String lugar;
+    private static final long SerialVersionUID = 555L;
 
     public Cita(String fecha, Usuario usuario, String lugar) {
         this.fecha = fecha;
@@ -49,5 +52,5 @@ public class Cita {
     public String toString() {
         return "Cita{" + "fecha=" + fecha + ", usuario=" + usuario + ", lugar=" + lugar + '}';
     }
-    
+
 }

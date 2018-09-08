@@ -5,6 +5,7 @@
  */
 package lab7_josuevidal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.Icon;
 
@@ -12,7 +13,7 @@ import javax.swing.Icon;
  *
  * @author josue
  */
-public class Usuario {
+public class Usuario implements Serializable {
 
     private String nombre;
     private int edad;
@@ -24,10 +25,13 @@ public class Usuario {
     private String descripcion;
     private Icon imagen;
     private ArrayList mensajes = new ArrayList();
-    private ArrayList solicitudes = new ArrayList();
-    private ArrayList bloqueados = new ArrayList();
-    private ArrayList <Cita>calendario = new ArrayList();
+    private ArrayList <Solicitud>solicitudes = new ArrayList();
+    private ArrayList <Usuario>bloqueados = new ArrayList();
+    private ArrayList<Cita> calendario = new ArrayList();
     private String premium;
+    private ArrayList <Usuario> interesados = new ArrayList();
+    
+    private static final long SerialVersionUID = 555L;
 
     public Usuario(String nombre, int edad, String sexo, String usuario, String contra, String descripcion, Icon imagen, String premium) {
         this.nombre = nombre;
@@ -152,9 +156,18 @@ public class Usuario {
         this.premium = premium;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "nombre=" + nombre + '}';
+    public ArrayList<Usuario> getInteresados() {
+        return interesados;
+    }
+
+    public void setInteresados(ArrayList<Usuario> interesados) {
+        this.interesados = interesados;
     }
     
+
+    @Override
+    public String toString() {
+        return  nombre ;
+    }
+
 }
